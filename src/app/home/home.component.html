@@ -1,13 +1,45 @@
-<p>
-  home works!
-</p>
+<h1>Register Yourself </h1>
 
 <form class="example-form">
+  <!-- <mat-form-field class="example-full-width">
+ -   <input matInput placeholder="Enter your name">  
+  </mat-form-field> -->
+<!---
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Enter your name">
+    <input matInput placeholder="Email" [formControl]="emailFormControl"
+           [errorStateMatcher]="matcher">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
+-->
+<fieldset>
+  <legend>Sign in</legend>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
+  <div>
+      <label for="username">Enter Player Name:</label>
+      <input type="text" id="username" name="username"
+             required />
+  </div>
+
+  <div>
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" name="password"
+             minlength="8" required
+             placeholder="8 characters minimum" />
+  </div>
+<div>
+<label for="primary">E-mail:</label>
+    <input type="email" 
+           pattern=".+@globex.com" size="30" required
+           title="Must be a globex.com email address" />
+          </div>
+
+ <input type="submit" value="Sign in">
+<!--  <button mat-button>Click to Register..!</button>  -->
+</fieldset>
 </form>

@@ -33,6 +33,7 @@ export class QuizComponentComponent implements OnInit {
     this.shouldDisplayQuestions = true;
     this.gameClock();
     console.log(this.questions[0].options);
+
     });
   }
 

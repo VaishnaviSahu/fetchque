@@ -1,7 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 //import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { HomeComponent } from './home/home.component';
 import {MatInputModule} from '@angular/material/input';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import {MatInputModule} from '@angular/material/input';
     //HeaderComponentComponent,
     QuizComponentComponent,
     HomeComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatButtonModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

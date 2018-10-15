@@ -1,8 +1,10 @@
   <div >
+    
     <button (click)="showQuestions()">Show Questions</button><br><br>
     <div *ngIf="counter>=1" >
-    <mat-grid-list cols="1" rowHeight="2:1" *ngIf = "shouldDisplayQuestions">
+    <mat-grid-list cols="1" rowHeight="4:1" *ngIf = "shouldDisplayQuestions">
     <div class="row" >
+        {{counter}}
       <mat-grid-tile>{{currentQuestion?.problemStatement}}
           <div class="optn" *ngFor="let o of currentQuestion?.options">
               <mat-radio-button value="o.id">{{o.content}}</mat-radio-button>
