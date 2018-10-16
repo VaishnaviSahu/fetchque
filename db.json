@@ -58,6 +58,25 @@
         ],
         "bloomLevel":1
     }
+],
+
+"players" : [
+    {
+        "name": "Player1",
+        "score": "50"
+    },
+    {
+        "name": "Player2",
+        "score": "56"
+    },
+    {
+        "name": "Player3",
+        "score": "87"
+    },
+    {
+        "name": "Player4",
+        "score": "44"
+    }
 ]
 }
 

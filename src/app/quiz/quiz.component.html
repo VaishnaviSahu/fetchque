@@ -3,14 +3,38 @@
     <button (click)="showQuestions()">Show Questions</button><br><br>
     <div *ngIf="counter>=1" >
     <mat-grid-list cols="1" rowHeight="4:1" *ngIf = "shouldDisplayQuestions">
-    <div class="row" >
+      <div class="row" >
         {{counter}}
-      <mat-grid-tile>{{currentQuestion?.problemStatement}}
-          <div class="optn" *ngFor="let o of currentQuestion?.options">
-              <mat-radio-button value="o.id">{{o.content}}</mat-radio-button>
-          </div>
+       <mat-grid-tile>{{currentQuestion?.problemStatement}}
+          <mat-radio-group class="radio-group">
+              <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.options" [value]="o.id">
+                {{o.content}}
+              </mat-radio-button>
+            </mat-radio-group>
       </mat-grid-tile>
-
-    </div>
+      </div>
     </mat-grid-list>
+    </div>
+<!---
+    <div class="player"  *ngFor="let p of players" >
+    <mat-card class="example-card" >
+      <mat-card-header>
+        <mat-card-title>{{p.name}} </mat-card-title>
+        <mat-card-subtitle>{{p.score}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+-->
+  <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile
+          *ngFor="let tile of tiles"
+          [colspan]="tile.cols"
+          [rowspan]="tile.rows"
+          [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+
   </div>
