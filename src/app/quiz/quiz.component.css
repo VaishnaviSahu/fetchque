@@ -10,5 +10,8 @@ mat-grid-tile {
   .radio-button {
     margin: 5px;
   }
-  
+  .sc{
+    text-align: right
+
+  }
   

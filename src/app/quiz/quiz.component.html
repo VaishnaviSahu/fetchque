@@ -1,15 +1,20 @@
   <div >
     
-    <button (click)="showQuestions()">Show Questions</button><br><br>
-    <div *ngIf="counter>=1" >
+    <button (click)="showQuestions()">Play</button><br><br>
+    <div *ngIf="counter>=1 && !gameOver" >
     <mat-grid-list cols="1" rowHeight="4:1" *ngIf = "shouldDisplayQuestions">
       <div class="row" >
         {{counter}}
-       <mat-grid-tile>{{currentQuestion?.problemStatement}}
-          <mat-radio-group class="radio-group">
+       <mat-grid-tile>
+         <mat-grid-tile-header>{{currentQuestion?.problemStatement}}</mat-grid-tile-header>
+          <mat-radio-group class="radio-group" (click)="nextQuestion()">
               <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.options" [value]="o.id">
-                {{o.content}}
+                {{o.content}}   
               </mat-radio-button>
+              <br>
+              <div class="sc">
+              Your Score is {{score}}
+            </div>
             </mat-radio-group>
       </mat-grid-tile>
       </div>
@@ -25,7 +30,8 @@
     </mat-card>
   </div>
 -->
-  <mat-grid-list cols="2" rowHeight="200px">
+<br>
+  <mat-grid-list cols="4" rowHeight="200px">
       <mat-grid-tile
           *ngFor="let tile of tiles"
           [colspan]="tile.cols"
@@ -35,6 +41,8 @@
       </mat-grid-tile>
     </mat-grid-list>
 
-
+    <div *ngIf="gameOver">
+      Game Over!
+    </div>
 
   </div>
